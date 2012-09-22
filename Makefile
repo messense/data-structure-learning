@@ -16,10 +16,10 @@ STACK_FILES=stack.c $(TEST_DIR)/test_stack.c
 .PHONY: build
 # make build
 build: 
-	# make binary directory first
+# make binary directory first
 	$(MKDIR) $(BIN_DIR)
 	@echo Starting compile testing codes...
-	# start compile source codes
+# start compile source codes
 	$(CC) helloworld.c -o $(BIN_DIR)/helloworld
 	$(CC) $(LINKLIST_FILES) -o $(BIN_DIR)/test_linklist
 	$(CC) $(ADLIST_FILES) -o $(BIN_DIR)/test_adlist

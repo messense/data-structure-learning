@@ -23,7 +23,7 @@ typedef struct list
 } list;
 
 list *list_create(void);
-void list_clear(list* list);
+void list_release(list* list);
 list *list_add_head(list *list, void *value);
 list *list_add_tail(list *list, void *value);
 list *list_insert(list *list, listNode *old_node, void *value, int after);

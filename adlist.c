@@ -13,7 +13,7 @@ list *list_create(void) {
 	return list;
 }
 
-void list_clear(list *list) {
+void list_release(list *list) {
 	unsigned long len;
 	listNode *current, *next;
 
@@ -157,7 +157,7 @@ list *list_dup(list *l) {
 		if(copy->dup) {
 			value = copy->dup(node->value);
 			if(value == NULL) {
-				list_clear(copy);
+				list_release(copy);
 				list_release_iterator(iter);
 				return NULL;
 			}
@@ -165,7 +165,7 @@ list *list_dup(list *l) {
 			value = node->value;
 		}
 		if(list_add_tail(copy, value) == NULL) {
-			list_clear(copy);
+			list_release(copy);
 			list_release_iterator(iter);
 			return NULL;
 		}

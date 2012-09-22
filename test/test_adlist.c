@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "adlist.h"
+#include "../adlist.h"
 
 int main(int argc, char const *argv[])
 {
@@ -23,6 +23,7 @@ int main(int argc, char const *argv[])
 		printf("%d\n", (int)node->value);
 	}
 	list_release_iterator(iter);
+	list_release(list);
 	printf("\nEnd printing.\n");
 	return 0;
 }

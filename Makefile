@@ -12,6 +12,7 @@ TEST_DIR=test
 LINKLIST_FILES=linklist.c $(TEST_DIR)/test_linklist.c
 ADLIST_FILES=adlist.c $(TEST_DIR)/test_adlist.c
 STACK_FILES=stack.c $(TEST_DIR)/test_stack.c
+QUEUE_FILES=queue.c $(TEST_DIR)/test_queue.c
 
 .PHONY: build
 # make build
@@ -24,6 +25,7 @@ build:
 	$(CC) $(LINKLIST_FILES) -o $(BIN_DIR)/test_linklist
 	$(CC) $(ADLIST_FILES) -o $(BIN_DIR)/test_adlist
 	$(CC) $(STACK_FILES) -o $(BIN_DIR)/test_stack
+	$(CC) $(QUEUE_FILES) -o $(BIN_DIR)/test_queue
 
 	@echo Finished compiling source codes.
 	@echo Go to bin directory to execute them.

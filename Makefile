@@ -9,7 +9,7 @@ BIN_DIR=bin
 # test source codes directory
 TEST_DIR=test
 
-LINKLIST_FILES=linklist.c $(TEST_DIR)/test_linklist.c
+LINKLIST_FILES=iterator.c linklist.c $(TEST_DIR)/test_linklist.c
 ADLIST_FILES=adlist.c $(TEST_DIR)/test_adlist.c
 STACK_FILES=stack.c $(TEST_DIR)/test_stack.c
 QUEUE_FILES=queue.c $(TEST_DIR)/test_queue.c

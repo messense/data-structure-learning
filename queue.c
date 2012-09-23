@@ -13,7 +13,7 @@ queue *queue_create(void) {
 
 void queue_release(queue *queue) {
 	unsigned long size = queue->size;
-	queueNode *current, *next;
+	Node *current, *next;
 	current = queue->head;
 	while(size--) {
 		next = current->next;
@@ -26,7 +26,7 @@ void queue_release(queue *queue) {
 }
 
 queue *enqueue(queue *queue, void *value) {
-	queueNode *node;
+	Node *node;
 	if((node = malloc(sizeof(*node))) == NULL)
 		return NULL;
 	node->value = value;
@@ -41,10 +41,10 @@ queue *enqueue(queue *queue, void *value) {
 	return queue;
 }
 
-queueNode *dequeue(queue *queue) {
+Node *dequeue(queue *queue) {
 	if(queue->size == 0)
 		return NULL;
-	queueNode *node = queue->head;
+	Node *node = queue->head;
 	queue->head = node->next;
 	node->next = NULL;
 	queue->size--;

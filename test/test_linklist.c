@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../linklist.h"
+#include "../iterator.h"
 
 int main(int argc, char const *argv[])
 {
@@ -17,12 +18,13 @@ int main(int argc, char const *argv[])
 		scanf("%d", &num);
 	}
 	printf("Print the numbers below.\n\n");
-	listIter *iter = list_get_iterator(list);
-	listNode *node;
-	while((node = list_next(iter)) != NULL) {
+	//listIter *iter = list_get_iterator(list);
+	iterator *iter = iterator_create(list);
+	Node *node;
+	while((node = iterator_next(iter)) != NULL) {
 		printf("%d\n", (int)node->value);
 	}
-	list_release_iterator(iter);
+	iterator_release(iter);
 	list_release(list);
 	printf("\nEnd printing.\n");
 	return 0;

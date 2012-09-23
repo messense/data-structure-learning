@@ -17,7 +17,7 @@ int main(int argc, char const *argv[])
 		scanf("%d", &num);
 	}
 	printf("Print the numbers below.\n\n");
-	stackNode *node;
+	Node *node;
 	while((node = stack_pop(stack)) != NULL) {
 		printf("%d\n", (int)node->value);
 	}

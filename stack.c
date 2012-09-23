@@ -13,7 +13,7 @@ stack *stack_create(void) {
 
 void stack_release(stack *stack) {
 	unsigned long size;
-	stackNode *current, *next;
+	Node *current, *next;
 	current = stack->head;
 	size = stack->size;
 	while(size--) {
@@ -26,10 +26,10 @@ void stack_release(stack *stack) {
 	free(stack);
 }
 
-stackNode *stack_pop(stack *stack) {
+Node *stack_pop(stack *stack) {
 	if(stack->size == 0)
 		return NULL;
-	stackNode *node, *next;
+	Node *node, *next;
 	node = stack->head;
 	next = node->next;
 	node->next = NULL;
@@ -39,37 +39,18 @@ stackNode *stack_pop(stack *stack) {
 }
 
 stack *stack_push(stack *stack, void *value) {
-	stackNode *node;
+	Node *node;
 	if((node = malloc(sizeof(*node))) == NULL)
 		return NULL;
 	node->value = value;
 	if(stack->size == 0) {
 		stack->head = stack->tail = node;
 	} else {
-		stackNode *current;
+		Node *current;
 		current = stack->head;
 		node->next = current;
 		stack->head = node;
 	}
 	stack->size++;
 	return stack;
-}
-
-stackIter *stact_iterator(stack *stack) {
-	stackIter *iter;
-	if((iter = malloc(sizeof(*iter))) == NULL)
-		return NULL;
-	iter->next = stack->head;
-	return iter;
-}
-
-stackNode *stack_next(stackIter *iter) {
-	stackNode *node = iter->next;
-	if(node != NULL)
-		iter->next = node->next;
-	return node;
-}
-
-void stack_release_iterator(stackIter *iter) {
-	free(iter);
 }

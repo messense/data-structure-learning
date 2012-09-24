@@ -31,11 +31,11 @@
 
 ## 项目文件结构说明
 
-### commonlist.h
+### src/commonlist.h
 
 定义公用的链表结构体和链表节点结构体
 
-### iterator.h & iterator.c
+### src/iterator.h & src/iterator.c
 
 定义并实现通用的链表迭代器，使用方法(以linklist为例)
 ```c

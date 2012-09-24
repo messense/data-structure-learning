@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../linklist.h"
-#include "../iterator.h"
+#include "../src/linklist.h"
+#include "../src/iterator.h"
 
 int main(int argc, char const *argv[])
 {

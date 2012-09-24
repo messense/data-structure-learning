@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../adlist.h"
+#include "../src/adlist.h"
 
 int main(int argc, char const *argv[])
 {

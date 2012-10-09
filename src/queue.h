@@ -8,6 +8,6 @@ typedef CommonList queue;
 queue *queue_create(void);
 void queue_release(queue *queue);
 queue *enqueue(queue *queue, void *value);
-Node *dequeue(queue *queue);
+void *dequeue(queue *queue);
 
 #endif

@@ -17,9 +17,9 @@ int main(int argc, char const *argv[])
 		scanf("%d", &num);
 	}
 	printf("Print the numbers below.\n\n");
-	Node *node;
-	while((node = dequeue(queue)) != NULL) {
-		printf("%d\n", (int)node->value);
+	int value;
+	while((value = (int)dequeue(queue)) != NULL) {
+		printf("%d\n", value);
 	}
 	queue_release(queue);
 	printf("\nEnd printing.\n");

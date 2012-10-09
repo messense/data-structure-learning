@@ -26,7 +26,7 @@ void stack_release(stack *stack) {
 	free(stack);
 }
 
-Node *stack_pop(stack *stack) {
+void *stack_pop(stack *stack) {
 	if(stack->size == 0)
 		return NULL;
 	Node *node, *next;
@@ -35,7 +35,7 @@ Node *stack_pop(stack *stack) {
 	node->next = NULL;
 	stack->head = next;
 	stack->size--;
-	return node;
+	return node->value;
 }
 
 stack *stack_push(stack *stack, void *value) {

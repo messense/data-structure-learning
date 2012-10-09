@@ -41,12 +41,12 @@ queue *enqueue(queue *queue, void *value) {
 	return queue;
 }
 
-Node *dequeue(queue *queue) {
+void *dequeue(queue *queue) {
 	if(queue->size == 0)
 		return NULL;
 	Node *node = queue->head;
 	queue->head = node->next;
 	node->next = NULL;
 	queue->size--;
-	return node;
+	return node->value;
 }

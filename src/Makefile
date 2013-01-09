@@ -19,7 +19,7 @@ build:
 	@echo Starting compile algorithm codes...
 # start compile source codes
 	$(CC) helloworld.c -o $(BIN_DIR)/helloworld
-	$(CC) BRACKETS -o $(BIN_DIR)/al_brackets
+	$(CC) $(BRACKETS) -o $(BIN_DIR)/al_brackets
 
 	@echo Finished compiling source codes.
 	@echo Go to bin directory to execute them.
